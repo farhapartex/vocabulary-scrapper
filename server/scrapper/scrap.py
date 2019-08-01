@@ -27,20 +27,24 @@ def get_word_information(word=None):
         req = requests.get(url)
         response = req.text
         soup = BeautifulSoup(response, "html.parser")
-        short_description = soup.select("p[class='short']")[0].text
-        long_description = soup.select("p[class='long']")[0].text
+        if len(soup.select("p[class='short']")) > 0:
+            short_description = soup.select("p[class='short']")[0].text
+            long_description = soup.select("p[class='long']")[0].text
 
-        groups = soup.find("div", attrs={"class": "group"})
-        groups = groups.find_all("div", attrs={"class": "ordinal"})
+            groups = soup.find("div", attrs={"class": "group"})
+            groups = groups.find_all("div", attrs={"class": "ordinal"})
 
-        definition = groups[0]
-        definition = get_inner_text(definition)
+            definition = groups[0]
+            definition = get_inner_text(definition)
 
-        groups = get_group_text_list(groups[1:])
+            groups = get_group_text_list(groups[1:])
+
+            data_object = {'main_word': word,
+                           'short_description': short_description, 'long_description': long_description, "first_definition": definition, "group_definition": groups}
+        else:
+            data_object = {
+                'message': "The word you are searching, is not found!"}
 
         #examples = soup.find("div",attrs={"class":"results"})
-
-        data_object = {'main_word': word,
-                       'short_description': short_description, 'long_description': long_description, "first_definition": definition, "group_definition": groups}
 
     return data_object

@@ -9,3 +9,7 @@ class VocabularyAPISerializer(serializers.Serializer):
     first_definition = serializers.CharField()
     group_definition = serializers.ListField(
         child=serializers.CharField(), required=False)
+
+
+class MessageAPISerializer(serializers.Serializer):
+    message = serializers.CharField()

@@ -7,7 +7,13 @@ from .scrap import get_word_information
 
 
 class WordAPIView(views.APIView):
+    results = None
+
     def get(self, request, word=None):
         info = get_word_information(word)
-        results = VocabularyAPISerializer(info).data
+        if len(info) > 1:
+            results = VocabularyAPISerializer(info).data
+        else:
+            results = MessageAPISerializer(info).data
+
         return Response(results)
