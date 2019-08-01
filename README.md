@@ -12,7 +12,7 @@ This is a  django app which can find out meaning of a word with example list (En
 * Go to the folder `vocabulary-scrapper`
 * For first use you have to build the app. To build type the command `docker-compose build server`
 * For using the app, each time you have to run the server. To run the server type the command `docker-compose up server`
-* Open another command prompt
+* Open another command prompt and move to the folder `vocabulary-scrapper`
 * To find out meaning of a word type the command `python3 word.py your_word`. Here replace your word with `your_word` and press enter. And here it is!!
 
 #### Output Format
