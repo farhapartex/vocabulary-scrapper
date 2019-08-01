@@ -3,6 +3,7 @@ This is a  django app which can find out meaning of a word with example list (En
 
 #### Prerequisite
 * Python >= 3.5
+* Docker
 
 #### How to use
 
