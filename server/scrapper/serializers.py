@@ -9,6 +9,7 @@ class VocabularyAPISerializer(serializers.Serializer):
     first_definition = serializers.CharField()
     group_definition = serializers.ListField(
         child=serializers.CharField(), required=False)
+    synonym_list = serializers.ListField(child=serializers.CharField())
 
 
 class MessageAPISerializer(serializers.Serializer):

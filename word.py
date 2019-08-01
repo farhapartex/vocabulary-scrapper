@@ -20,6 +20,7 @@ short_description: {1}\n
 long_description: {2}\n
 first_definition: {3}\n
 group_definition: {4}\n
-'''.format(req['main_word'], req['short_description'], req['long_description'], req['first_definition'], req['group_definition'])
+synonym_list: {5}\n
+'''.format(req['main_word'], req['short_description'], req['long_description'], req['first_definition'], req['group_definition'], req['synonym_list'])
 
 print(data_format)

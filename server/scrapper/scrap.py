@@ -18,6 +18,17 @@ def get_group_text_list(groups):
     return data_list
 
 
+def get_synoname_list(data):
+    s_list = []
+    data = data.find("dl", attrs={"class": "instances"})
+    data = data.find("dd")
+    data = data.find_all("a")
+    for a in data:
+        s_list.append(a.text)
+
+    return s_list
+
+
 def get_word_information(word=None):
     data_object = {}
     url = 'https://www.vocabulary.com/dictionary/{0}'
@@ -39,8 +50,11 @@ def get_word_information(word=None):
 
             groups = get_group_text_list(groups[1:])
 
+            syn_list_data = soup.find("div", attrs={"class": "defContent"})
+            syn_list = get_synoname_list(syn_list_data)
+
             data_object = {'main_word': word,
-                           'short_description': short_description, 'long_description': long_description, "first_definition": definition, "group_definition": groups}
+                           'short_description': short_description, 'long_description': long_description, "first_definition": definition, "group_definition": groups, "synonym_list": syn_list}
         else:
             data_object = {
                 'message': "The word you are searching, is not found!"}

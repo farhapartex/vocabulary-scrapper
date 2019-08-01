@@ -18,7 +18,8 @@ This is a  django app which can find out meaning of a word with example list (En
 #### Output Format
 
 * `Word` : This the word name you are searching
-* `short_description` : This block will give you a short idea on the word, you search
-* `long_description` : This block will give you a brief idea on the word, you search
-* `first_definition` : This block will give you the definition of the word, you search
-* `group_definition` : This block will give you some definition list which also describe the word, you search
+* `short_description` : This block will show to you a short idea on the word, you search
+* `long_description` : This block will show to you a brief idea on the word, you search
+* `first_definition` : This block will show to you the definition of the word, you search
+* `group_definition` : This block will show definition list which also describe the word, you search
+* `synonym_list` : This block will show synonyms for the word, you search
