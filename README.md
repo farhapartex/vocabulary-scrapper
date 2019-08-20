@@ -23,3 +23,15 @@ This is a  django app which can find out meaning of a word with example list (En
 * `first_definition` : This block will show to you the definition of the word, you search
 * `group_definition` : This block will show definition list which also describe the word, you search
 * `synonym_list` : This block will show synonyms for the word, you search
+
+### For only scrapping
+
+If you think, you just want to use the scrapper file then use the `scrapper-file` folder. There is a single file named `scrap.py`. Just call the method named `get_word_information` and pass your word as argument.
+
+### Demo:
+
+```
+from scrap import get_word_information
+word = "Morning"
+scrap_data = get_word_information(word)
+```
