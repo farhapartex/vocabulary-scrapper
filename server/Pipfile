@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-wagtail = ">=2.4,<2.5"
+wagtail = ">=2.4,<2.8"
 Django = "*"
 psycopg2-binary = "*"
 djangorestframework = "*"
